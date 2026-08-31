@@ -1,0 +1,23 @@
+<article class="card">
+
+  <h2>{{ livro().titulo }}</h2>
+  <p>Autor: {{ livro().autor }}</p>
+  <p>Ano: {{ livro().ano }}</p>
+  <p>Status: {{ livro().status }}</p>
+
+  <div class="acoes">
+    <a [routerLink]="['/livros', livro().id]">
+      Ver detalhes
+    </a>
+
+    <button type="button" (click)="onAlterarStatus()">
+      Marcar como
+      {{ livro().status === 'disponivel' ? 'emprestado' : 'disponível' }}
+    </button>
+
+    <button type="button" class="excluir" (click)="onExcluir()">
+      Excluir
+    </button>
+  </div>
+
+</article>

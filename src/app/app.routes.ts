@@ -1,3 +1,25 @@
-import { Routes } from '@angular/router';
+import { Routes } from "@angular/router";
 
-export const routes: Routes = [];
+import { LivrosPage } from "./features/livros/pages/livros-page/livros-page";
+
+import { LivroDetalhePage } from "./features/livros/pages/livro-detalhe-page/livro-detalhe-page";
+
+export const routes: Routes = [
+
+  {
+    path: "",
+    redirectTo: "livros",
+    pathMatch: "full"
+  },
+
+  {
+    path: "livros",
+    component: LivrosPage
+  },
+
+  {
+    path: "livros/:id",
+    component: LivroDetalhePage
+  }
+
+];

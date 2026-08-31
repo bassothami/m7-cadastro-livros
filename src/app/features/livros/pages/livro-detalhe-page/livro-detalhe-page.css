@@ -1,0 +1,19 @@
+.acoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.acoes button {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.acoes button.excluir {
+  background: #fce8e8;
+  border-color: #e0a0a0;
+  color: #b00020;
+}

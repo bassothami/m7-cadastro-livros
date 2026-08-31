@@ -1,0 +1,81 @@
+<form class="formulario" (submit)="$event.preventDefault(); enviar()">
+
+  <h2>Novo livro</h2>
+
+  <div>
+    <label for="titulo">Título</label>
+    <input
+      id="titulo"
+      type="text"
+      [value]="titulo()"
+      (input)="alterarTitulo($any($event.target).value)"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="autor">Autor</label>
+    <input
+      id="autor"
+      type="text"
+      [value]="autor()"
+      (input)="alterarAutor($any($event.target).value)"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="categoria">Categoria</label>
+    <input
+      id="categoria"
+      type="text"
+      [value]="categoria()"
+      (input)="alterarCategoria($any($event.target).value)"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="ano">Ano</label>
+    <input
+      id="ano"
+      type="number"
+      [value]="ano()"
+      (input)="alterarAno($any($event.target).value)"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="status">Status</label>
+    <select
+      id="status"
+      [value]="status()"
+      (change)="alterarStatus($any($event.target).value)"
+    >
+      <option value="disponivel">Disponível</option>
+      <option value="emprestado">Emprestado</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="descricao">Descrição</label>
+    <textarea
+      id="descricao"
+      [value]="descricao()"
+      (input)="alterarDescricao($any($event.target).value)"
+      required
+    ></textarea>
+  </div>
+
+  <div class="acoes">
+    <button type="submit">
+      Cadastrar livro
+    </button>
+
+    <button type="button" (click)="cancelarFormulario()">
+      Cancelar
+    </button>
+  </div>
+
+</form>
